@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 
-//server start//
+//This will start the server on the assigned port//
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
@@ -53,6 +53,7 @@ app.get('/api/notes', (req, res) => {
     res.json(notes);
 });
 
+//Delete function//
 app.delete('/api/notes/:id', (req, res) => {
     let notes = fs.readFileSync('db/db.json', 'utf8');
     notes = JSON.parse(notes);
