@@ -37,12 +37,14 @@ app.get('/notes', (req, res) => {
 });
 
 app.post('/api/notes', (req, res) => {
-    const newNote = req.body;
-    newNote.id = uuid.v4();
-    const notes = JSON.parse(fs.readFileSync('db/db.json', 'utf8'));
-    notes.push(newNote);
-    fs.writeFileSync('db/db.json', JSON.stringify(notes));
-    res.json(newNote);
+console.log(req.body);
+    let notes = fs.readFileSync('db/db.json', 'utf8');
+    notes = JSON.parse(notes);
+    req.body.id = uuid.v4();
+    notes.push(req.body);
+    notes = JSON.stringify(notes);
+    fs.writeFileSync('db/db.json', notes);
+    res.json(JSON.parse(notes));
 });
 
 app.get('/api/notes', (req, res) => {
@@ -52,11 +54,11 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-    const notes = fs.readFileSync('db/db.json', 'utf8');
+    let notes = fs.readFileSync('db/db.json', 'utf8');
     notes = JSON.parse(notes);
-    notes = notes.filter((note) => note.id !== req.params.id);
+    notes = notes.filter(note => note.id !== req.params.id);
     notes = JSON.stringify(notes);
-    fs.writeFileSync('db/db.json', notes);
+    fs.writeFileSync('./db/db.json', notes, 'utf8');
     res.json(JSON.parse(notes));
 });
 
