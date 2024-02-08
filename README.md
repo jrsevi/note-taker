@@ -15,11 +15,11 @@ An application used to write and save notes in effort to make organizing thought
 
 ## Installation
 
-To install, open server.js in an integrated terminal, run npm install, and npm start
+Please visit https://tranquil-mesa-59789-4392468175a9.herokuapp.com/ to use this application
 
 ## Usage
 
-After running npm install, visit localhost:3001 in your web browser. Click "Get Started" to start taking notes. Give your note a title by clicking into that text box and typing your desired title. Enter the content of the note by clicking the "note text" text box and typing your desired note. To save the note, click the "save note" button to save note. After saving a note you can delete a note by clicking the red trash can.
+Give your note a title by clicking into that text box and typing your desired title. Enter the content of the note by clicking the "note text" text box and typing your desired note. To save the note, click the "save note" button to save note. After saving a note you can delete a note by clicking the red trash can.
 
 ## Contributions
 
@@ -27,7 +27,7 @@ Jeremy Sevilla
 
 ## Tests
 
-To test that this application works try saving a note! If the note doesn't save make sure you have successfully ran npm install and npm start.
+Try saving a note!
 
 ## License
 
